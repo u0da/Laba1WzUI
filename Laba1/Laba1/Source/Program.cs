@@ -1,11 +1,8 @@
-﻿using System;
-using System.Globalization;
-using System.Threading;
-namespace Laba1
+﻿namespace Laba1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(/*string[] args*/)
         {
             /* Lab1
 
@@ -75,7 +72,7 @@ namespace Laba1
             }*/
 
 
-            static void PrintNearZero(V1MainCollection mainCollection, float eps)
+            /*static void PrintNearZero(V1MainCollection mainCollection, float eps)
             {
 
                 foreach (V1Data data in mainCollection)
@@ -90,7 +87,7 @@ namespace Laba1
 
                     Console.WriteLine($"( {str} )");
                 }
-            }
+            }*/
         }
     }
 }

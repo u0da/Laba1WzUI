@@ -83,7 +83,8 @@ namespace Laba1
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw ex;
+                //Console.WriteLine(ex.Message);
             }
             finally
             {

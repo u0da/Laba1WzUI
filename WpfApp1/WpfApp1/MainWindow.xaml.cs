@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
+using System.IO;
 using Laba1;
 
 namespace WpfApp1
@@ -23,7 +24,6 @@ namespace WpfApp1
                 e.Cancel = UnsavedChangesSaving();
             }
         }
-
 
         private bool UnsavedChangesSaving()
         {
@@ -77,9 +77,9 @@ namespace WpfApp1
                 Microsoft.Win32.OpenFileDialog FileDia = new Microsoft.Win32.OpenFileDialog();
                 if ((bool)FileDia.ShowDialog())
                 {
-                    MainColl = new V1MainCollection();
+                   // MainColl = new V1MainCollection();
                     MainColl.Load(FileDia.FileName);
-                    DataContext = MainColl;
+                    //DataContext = MainColl;
                 }
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace WpfApp1
         private void AddDefaultsButton_Click(object sender, RoutedEventArgs e)
         {
             MainColl.AddDefaults();
-            DataContext = MainColl;
+            //DataContext = MainColl;
         }
 
         private void AddDefaultV1DataOnGridButton_Click(object sender, RoutedEventArgs e)
@@ -112,7 +112,9 @@ namespace WpfApp1
             {
                 Microsoft.Win32.OpenFileDialog FileDia = new Microsoft.Win32.OpenFileDialog();
                 if ((bool)FileDia.ShowDialog())
+                {
                     MainColl.AddElementFromFile(FileDia.FileName);
+                }
             }
             catch (Exception ex)
             {
@@ -140,7 +142,7 @@ namespace WpfApp1
                 else args.Accepted = false;
             }
         }
-        private void DataOnGridSubset(object sender, FilterEventArgs args)
+        private void DataOnGridSubset(object sender, FilterEventArgs args) // выбираем эл-ты типа v1dataongrid
         {
             var item = args.Item;
             if (item != null)

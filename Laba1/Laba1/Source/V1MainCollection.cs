@@ -171,7 +171,7 @@ namespace Laba1
         {
             get
             {
-                if(Count == 0) { return 0; }
+                if (Count == 0) { return 0; }
                 int selector(V1Data selection)
                 {
                     var query = from dataitem in selection
@@ -240,6 +240,7 @@ namespace Laba1
                     OnPropertyChanged("UserCollectionChanged");
                     OnCollectionChanged(NotifyCollectionChangedAction.Remove);
                     OnPropertyChanged("Count");
+                    OnPropertyChanged("MaxNumberofMesRes");
                     //item.PropertyChanged -= onPropertyChanged;
                     //DataChanged(this, new DataChangedEventArgs(ChangeInfo.Remove, item.Info));
                     result = true;
