@@ -209,7 +209,7 @@ namespace Laba1
         }
 
 
-        void Add(V1Data item)
+        public void Add(V1Data item)
         {
             try
             {
@@ -219,8 +219,6 @@ namespace Laba1
                 OnPropertyChanged("UserCollectionChanged");
                 OnPropertyChanged("Count");
                 OnPropertyChanged("MaxNumberofMesRes");
-                //item.PropertyChanged += onPropertyChanged;
-                // DataChanged(this, new DataChangedEventArgs(ChangeInfo.Add, item.Info));}
             }
             catch (Exception ex)
             {
@@ -241,8 +239,6 @@ namespace Laba1
                     OnCollectionChanged(NotifyCollectionChangedAction.Remove);
                     OnPropertyChanged("Count");
                     OnPropertyChanged("MaxNumberofMesRes");
-                    //item.PropertyChanged -= onPropertyChanged;
-                    //DataChanged(this, new DataChangedEventArgs(ChangeInfo.Remove, item.Info));
                     result = true;
                 }
             }
@@ -326,16 +322,17 @@ namespace Laba1
        
         public void AddDefaultDataCollection()
         {
-            V1DataCollection dataCollection = new V1DataCollection("default collection");
+            DateTime dateTime = new DateTime(2020, 07, 17, 22, 10, 57);
+            V1DataCollection dataCollection = new V1DataCollection("default collection", dateTime);
             dataCollection.InitRandom(10, 5, 10, 5, 10);
             Add(dataCollection);
         }
 
         public void AddDefaultDataOnGridCollection()
         {
-            Grid grid = new Grid();
+            Grid grid = new Grid(0, 0.1f, 10);
             DateTime dateTime = new DateTime(2020, 07, 17, 22, 10, 57);
-            V1DataOnGrid dataOnGrid = new V1DataOnGrid("default data on grid",dateTime, grid);
+            V1DataOnGrid dataOnGrid = new V1DataOnGrid("default data on grid", dateTime, grid);
             dataOnGrid.InitRandom(5, 10);
             Add(dataOnGrid);
         }

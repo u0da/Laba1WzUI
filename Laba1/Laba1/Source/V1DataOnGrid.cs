@@ -12,7 +12,7 @@ namespace Laba1
         public Grid Grid { get; }
         public Vector3[] Values { get; }
 
-        public V1DataOnGrid(string info,DateTime date, Grid grid) : base(info, date )
+        public V1DataOnGrid(string info, DateTime date, Grid grid) : base(info, date )
         {
             Grid = grid;
             Values = new Vector3[grid.Number];
